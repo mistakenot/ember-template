@@ -5,7 +5,7 @@ export default Ember.Component.extend({
 
   actions: {
     authenticateWithOAuth2() {
-      this.set('errorMessage', null)
+      this.set('errorMessage', null);
       let { identification, password } = this.getProperties('identification', 'password');
 
       this.get('authentication')
