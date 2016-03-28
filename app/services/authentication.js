@@ -7,5 +7,11 @@ export default Ember.Service.extend({
     return this
       .get('session')
       .authenticate('authenticator:oauth2', username, password)
+  },
+
+  withFacebook() {
+    return this
+      .get('session')
+      .authenticate('authenticator:torii', 'facebook');
   }
 });
