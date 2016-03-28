@@ -7,10 +7,13 @@ export default Ember.Component.extend({
 
   actions: {
     authenticateWithOAuth2() {
+      this.set('errorMessage', null)
       let { identification, password } = this.getProperties('identification', 'password');
-      this.get('session').authenticate('authenticator:oauth2', identification, password).catch((reason) => {
-        this.set('errorMessage', reason.error);
-      });
+      this.get('session')
+        .authenticate('authenticator:oauth2', identification, password)
+        .catch((reason) => {
+          this.set('errorMessage', reason.message);
+        });
     },
 
     authenticateWithFacebook() {

@@ -19,6 +19,11 @@ module.exports = function(environment) {
     }
   };
 
+  // ember-simple-auth
+  ENV['ember-simple-auth'] = {
+    authenticationRoute: 'login'
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

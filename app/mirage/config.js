@@ -1,22 +1,12 @@
+import Mirage from 'ember-cli-mirage';
+
+import UserConfig from './config/users';
+import AuthConfig from './config/auth';
+
 export default function() {
 
-
-  function formEncodedToJson(encoded) {
-    var result = {};
-    encoded.split("&").forEach(function(part) {
-      var item = part.split("=");
-      result[item[0]] = decodeURIComponent(item[1]);
-    });
-    return result;
-  }
-
-  this.post('/token', (db, request) => {
-    var params = formEncodedToJson(request.requestBody);
-    return {
-        "access_token": params.password,
-        "token_type":"bearer"
-      }
-  });
+  UserConfig(this);
+  AuthConfig(this);
 
   // These comments are here to help you get started. Feel free to delete them.
 
