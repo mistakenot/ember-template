@@ -1,7 +1,7 @@
-<form {{action 'authenticateWithOAuth2' on='submit'}}>
+<form {{action 'onSubmit' on='submit'}}>
   <div class="form-group">
     <label for="identification">Username</label>
-    {{input value=identification placeholder='Enter Email' class='form-control'}}
+    {{input value=email placeholder='Enter Email' class='form-control'}}
   </div>
   <div class="form-group">
     <label for="password">Password</label>
@@ -12,7 +12,7 @@
 {{#if errorMessage}}
   <div class="alert alert-danger">
     <p>
-      <strong>Login failed:</strong> <code>{{errorMessage}}</code>
+      <strong>Registration failed:</strong> <code>{{errorMessage}}</code>
     </p>
     <p>
       Documentation of the error codes can be found in the <a href="http://tools.ietf.org/html/rfc6749#section-5.2" title="RFC 6749 - Error Response">Error Response section of RFC 6749</a>.

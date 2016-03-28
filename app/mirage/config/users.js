@@ -2,9 +2,7 @@ import Mirage from 'ember-cli-mirage';
 
 export default function(config) {
 
-  config.post('/users', (db, request) => {
-
-  });
+  config.post('/users');
 
   config.get('/users');
 
