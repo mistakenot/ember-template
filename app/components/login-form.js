@@ -1,17 +1,22 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  authentication: Ember.inject.service(),
+  auth: Ember.inject.service(),
 
   actions: {
-    authenticateWithOAuth2() {
-      this.set('errorMessage', null);
-      let { identification, password } = this.getProperties('identification', 'password');
-
-      this.get('authentication')
-        .withUsernameAndPassword(identification, password)
-        .catch((error) => {
-          this.set('errorMessage', error.message);
+    useFacebook() {
+      this.get('auth')
+        .withFacebook();
+    },
+    usePassword() {
+      this.set('error', null);
+      this.get('auth')
+        .withPassword(this.get('email'), this.get('password'))
+        .then((data) => {
+          this.get('onSubmit')(data);
+        })
+        .catch(err => {
+          this.set('error', err.message);
         });
     }
   }

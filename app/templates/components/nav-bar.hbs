@@ -18,9 +18,9 @@
       </form>
 
       <ul class="nav navbar-nav navbar-right">
-        {{#if authentication.isAuthenticated }}
+        {{#if session.isAuthenticated }}
           <li role="presentation" class="pull-right">
-            <a {{action "logout"}}>Logout</a>
+            {{#link-to 'logout'}}Logout{{/link-to}}
           </li>
         {{else}}
           <li role="presentation" class="pull-right">

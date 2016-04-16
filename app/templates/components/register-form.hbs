@@ -7,8 +7,9 @@
     <label for="password">Password</label>
     {{input value=password placeholder='Enter Password' class='form-control' type='password'}}
   </div>
-  <button type="submit" class="btn btn-default">Login</button>
+  <button {{action "onSubmit"}} class="btn btn-default">Register</button>
 </form>
+
 {{#if errorMessage}}
   <div class="alert alert-danger">
     <p>

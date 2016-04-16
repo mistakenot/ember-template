@@ -4,7 +4,9 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'client',
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
     baseURL: '/',
+    authenticationRoute: 'login',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -16,12 +18,13 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
-  };
+    },
 
-  // ember-simple-auth
-  ENV['ember-simple-auth'] = {
-    authenticationRoute: 'login'
+    firebase: 'https://incandescent-inferno-1679.firebaseio.com/',
+
+    torii: {
+       sessionServiceName: 'session'
+    }
   };
 
   if (environment === 'development') {
@@ -46,6 +49,10 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
 
+  }
+
+  ENV['ember-cli-mirage'] = {
+    enabled: false
   }
 
   return ENV;

@@ -1,6 +1,6 @@
-import DS from 'ember-data';
-import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
+import Ember from 'ember';
+import FirebaseAdapter from 'emberfire/adapters/firebase';
 
-export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
-  authorizer: 'authorizer:application'
+export default FirebaseAdapter.extend({
+  firebase: Ember.inject.service(),
 });

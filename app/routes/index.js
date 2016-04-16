@@ -1,7 +1,4 @@
 import Ember from 'ember';
+import AuthenticatedRouteMixin from './../mixins/authenticated-route-mixin';
 
-export default Ember.Route.extend({
-  beforeModel(){
-    this.transitionTo('inbox');
-  }
-});
+export default Ember.Route.extend(AuthenticatedRouteMixin);
