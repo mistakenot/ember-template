@@ -1,0 +1,12 @@
+path / {
+  read() = false;
+  write() = false;
+}
+
+path /users/{uid} {
+  read() = true
+}
+
+isAuthorised() {
+  auth != null && auth.paidUntil > now
+}

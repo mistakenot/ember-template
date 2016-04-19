@@ -5,8 +5,7 @@ export default Ember.Component.extend({
 
   actions: {
     useFacebook() {
-      this.get('auth')
-        .withFacebook();
+      this.get('auth').withFacebook();
     },
     usePassword() {
       this.set('error', null);
