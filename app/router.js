@@ -11,6 +11,9 @@ Router.map(function() {
   this.route('logout');
   this.route('inbox');
   this.route('payments');
+  this.route('titles', function() {
+    this.route('create');
+  });
 });
 
 export default Router;

@@ -20,7 +20,7 @@ module.exports = function(environment) {
       // when it is created
     },
 
-    firebase: 'https://incandescent-inferno-1679.firebaseio.com/',
+    firebase: 'https://deece.firebaseio.com/',
 
     torii: {
        sessionServiceName: 'session'

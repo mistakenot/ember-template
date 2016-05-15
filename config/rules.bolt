@@ -10,3 +10,11 @@ path /users/{uid} {
 isAuthorised() {
   auth != null && auth.paidUntil > now
 }
+
+type Title {
+  name: String,
+  description: String,
+  year: Number,
+  director: String,
+  actors: String
+}
